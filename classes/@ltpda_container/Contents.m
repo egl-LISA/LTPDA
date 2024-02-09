@@ -1,0 +1,30 @@
+%%%%%%%%%%%%%%%%%%%%   path: classes\@ltpda_container   %%%%%%%%%%%%%%%%%%%%
+%
+%   <a href="matlab:help classes\@ltpda_container\abs">classes\@ltpda_container\abs</a>             -  overloads the Absolute value method for analysis objects in a ltpda_container object.
+%   <a href="matlab:help classes\@ltpda_container\conj">classes\@ltpda_container\conj</a>            -  implements conj operator for ltpda_container objects.
+%   <a href="matlab:help classes\@ltpda_container\consolidate">classes\@ltpda_container\consolidate</a>     -  resamples all input AOs in a ltpda_container object onto the same time grid.
+%   <a href="matlab:help classes\@ltpda_container\detrend">classes\@ltpda_container\detrend</a>         -  detrends the analysis objects in a ltpda_container object using a polynomial of degree N.
+%   <a href="matlab:help classes\@ltpda_container\diff">classes\@ltpda_container\diff</a>            -  differentiates the data in a ltpda_container object.
+%   <a href="matlab:help classes\@ltpda_container\downsample">classes\@ltpda_container\downsample</a>      -  downsamples each time-series AO in the ltpda_container.
+%   <a href="matlab:help classes\@ltpda_container\dsmean">classes\@ltpda_container\dsmean</a>          -  resamples each time-series AO in the ltpda_container.
+%   <a href="matlab:help classes\@ltpda_container\fft">classes\@ltpda_container\fft</a>             -  implements the fft operator for ltpda_container objects.
+%   <a href="matlab:help classes\@ltpda_container\fixfs">classes\@ltpda_container\fixfs</a>           -  adjusts the sample frequency of each time-series AO in the ltpda_container.
+%   <a href="matlab:help classes\@ltpda_container\heterodyne">classes\@ltpda_container\heterodyne</a>      -  heterodynes time-series in a ltpda_container object.
+%   <a href="matlab:help classes\@ltpda_container\interp">classes\@ltpda_container\interp</a>          -  interpolate the values of each AO in the ltpda_container at new values.
+%   <a href="matlab:help classes\@ltpda_container\interpmissing">classes\@ltpda_container\interpmissing</a>   -  interpolate missing samples of each time-series AO in the ltpda_container.
+%   <a href="matlab:help classes\@ltpda_container\iplotPSD">classes\@ltpda_container\iplotPSD</a>        -  iplotPSD plots the sqrt of PSD AOs a ltpda_container object, including error bars
+%   <a href="matlab:help classes\@ltpda_container\lpsd">classes\@ltpda_container\lpsd</a>            -  computes the log-scale PSD of the time-series AOs in a ltpda_container object.
+%   <a href="matlab:help classes\@ltpda_container\ltpda_container">classes\@ltpda_container\ltpda_container</a> -  is the abstract ltpda class for ltpda multiple user object classes.
+%   <a href="matlab:help classes\@ltpda_container\polyfit">classes\@ltpda_container\polyfit</a>         -  overloads polyfit() function of MATLAB for ltpda_container objects.
+%   <a href="matlab:help classes\@ltpda_container\psd">classes\@ltpda_container\psd</a>             -  computes the PSD of the time-series in a ltpda_container object.
+%   <a href="matlab:help classes\@ltpda_container\removeVal">classes\@ltpda_container\removeVal</a>       -  removes values from each AO in the ltpda_container.
+%   <a href="matlab:help classes\@ltpda_container\resample">classes\@ltpda_container\resample</a>        -  resamples each time-series AO in the ltpda_container.
+%   <a href="matlab:help classes\@ltpda_container\search">classes\@ltpda_container\search</a>          -  selects objects inside the collection/matrix object that match the given name.
+%   <a href="matlab:help classes\@ltpda_container\simplifyYunits">classes\@ltpda_container\simplifyYunits</a>  -  overloads the simplifyYunits value method for analysis objects in a ltpda_container object.
+%   <a href="matlab:help classes\@ltpda_container\split">classes\@ltpda_container\split</a>           -  splits a ltpda_container object into the specified segments.
+%   <a href="matlab:help classes\@ltpda_container\sqrt">classes\@ltpda_container\sqrt</a>            -  computes the sqrt of each object in the ltpda_container.
+%   <a href="matlab:help classes\@ltpda_container\subsData">classes\@ltpda_container\subsData</a>        -  computes the SUBSDATA of the time-series in a ltpda_container object.
+%   <a href="matlab:help classes\@ltpda_container\timeaverage">classes\@ltpda_container\timeaverage</a>     -  Averages time series intervals in a ltpda_container object.
+%   <a href="matlab:help classes\@ltpda_container\toSI">classes\@ltpda_container\toSI</a>            -  overloads the toSI value method for analysis objects in a ltpda_container object.
+%   <a href="matlab:help classes\@ltpda_container\uminus">classes\@ltpda_container\uminus</a>          -  overloads the uminus operator for all AOs in the ltpda_container.
+%   <a href="matlab:help classes\@ltpda_container\wrapper">classes\@ltpda_container\wrapper</a>         -  applies the given method to each object in the object.

@@ -1,0 +1,29 @@
+%%%%%%%%%%%%%%%%%%%%   path: classes\@param   %%%%%%%%%%%%%%%%%%%%
+%
+%   <a href="matlab:help classes\@param\addAlternativeKey">classes\@param\addAlternativeKey</a> -  adds a key to the list of keys
+%   <a href="matlab:help classes\@param\attachToDom">classes\@param\attachToDom</a>       - % Create empty param node with the attribute 'shape'
+%   <a href="matlab:help classes\@param\char">classes\@param\char</a>              -  convert a param object into a string.
+%   <a href="matlab:help classes\@param\copy">classes\@param\copy</a>              -  makes a (deep) copy of the input param objects.
+%   <a href="matlab:help classes\@param\copyWithDefault">classes\@param\copyWithDefault</a>   -  makes a (deep) copy of the input param objects.
+%   <a href="matlab:help classes\@param\disp">classes\@param\disp</a>              -  display a parameter
+%   <a href="matlab:help classes\@param\fromDom">classes\@param\fromDom</a>           - % Get shape
+%   <a href="matlab:help classes\@param\fromStruct">classes\@param\fromStruct</a>        -  creates from a structure a PARAM object.
+%   <a href="matlab:help classes\@param\getDefaultVal">classes\@param\getDefaultVal</a>     -  retrurns the default value for this parameter
+%   <a href="matlab:help classes\@param\getOptions">classes\@param\getOptions</a>        -  returns the array of options for the param
+%   <a href="matlab:help classes\@param\getProperties">classes\@param\getProperties</a>     -  return all properties from a parameter.
+%   <a href="matlab:help classes\@param\getProperty">classes\@param\getProperty</a>       -  get a property from a parameter.
+%   <a href="matlab:help classes\@param\getVal">classes\@param\getVal</a>            -  returns the default value of a param.
+%   <a href="matlab:help classes\@param\isequal">classes\@param\isequal</a>           -  overloads the isequal operator for ltpda param objects.
+%   <a href="matlab:help classes\@param\loadobj">classes\@param\loadobj</a>           -  is called by the load function for user objects.
+%   <a href="matlab:help classes\@param\param">classes\@param\param</a>             -  Parameter object class constructor.
+%   <a href="matlab:help classes\@param\setDefaultIndex">classes\@param\setDefaultIndex</a>   -  Sets the index which points to the default value to the input.
+%   <a href="matlab:help classes\@param\setDefaultOption">classes\@param\setDefaultOption</a>  -  Sets the default option of the a param object.
+%   <a href="matlab:help classes\@param\setDesc">classes\@param\setDesc</a>           -  Set the property 'desc'.
+%   <a href="matlab:help classes\@param\setKey">classes\@param\setKey</a>            -  Set the property 'key'.
+%   <a href="matlab:help classes\@param\setKeyVal">classes\@param\setKeyVal</a>         -  Set the properties 'key' and 'val'
+%   <a href="matlab:help classes\@param\setOrigin">classes\@param\setOrigin</a>         -  Set the property 'origin'.
+%   <a href="matlab:help classes\@param\setProperty">classes\@param\setProperty</a>       -  set a property to a parameter.
+%   <a href="matlab:help classes\@param\setReadonly">classes\@param\setReadonly</a>       -  sets the readonly flag of the param object and (if existing)
+%   <a href="matlab:help classes\@param\setVal">classes\@param\setVal</a>            -  Set the property 'val'.
+%   <a href="matlab:help classes\@param\string">classes\@param\string</a>            -  writes a command string that can be used to recreate the input param object.
+%   <a href="matlab:help classes\@param\update_struct">classes\@param\update_struct</a>     -  update the input structure to the current ltpda version

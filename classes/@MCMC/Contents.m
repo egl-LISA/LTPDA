@@ -1,0 +1,43 @@
+%%%%%%%%%%%%%%%%%%%%   path: classes\@MCMC   %%%%%%%%%%%%%%%%%%%%
+%
+%   <a href="matlab:help classes\@MCMC\MCMC">classes\@MCMC\MCMC</a>                 -  - Markov Chain Monte Carlo algorithm
+%   <a href="matlab:help classes\@MCMC\ao2strucArrays">classes\@MCMC\ao2strucArrays</a>       - AO2NUMMATRICES.m
+%   <a href="matlab:help classes\@MCMC\attachToDom">classes\@MCMC\attachToDom</a>          - % Create empty ao node with the attribute 'shape'
+%   <a href="matlab:help classes\@MCMC\buildLogLikelihood">classes\@MCMC\buildLogLikelihood</a>   - (No help available)
+%   <a href="matlab:help classes\@MCMC\buildplist">classes\@MCMC\buildplist</a>           - (No help available)
+%   <a href="matlab:help classes\@MCMC\calculateCovariance">classes\@MCMC\calculateCovariance</a>  - (No help available)
+%   <a href="matlab:help classes\@MCMC\checkDiffStep">classes\@MCMC\checkDiffStep</a>        - (No help available)
+%   <a href="matlab:help classes\@MCMC\checkP0class">classes\@MCMC\checkP0class</a>         - (No help available)
+%   <a href="matlab:help classes\@MCMC\checkXo">classes\@MCMC\checkXo</a>              - --------------------------------------------------------------------------
+%   <a href="matlab:help classes\@MCMC\collectOutputAOs">classes\@MCMC\collectOutputAOs</a>     - (No help available)
+%   <a href="matlab:help classes\@MCMC\computeBeta">classes\@MCMC\computeBeta</a>          - (No help available)
+%   <a href="matlab:help classes\@MCMC\computeICSMatrix">classes\@MCMC\computeICSMatrix</a>     - (No help available)
+%   <a href="matlab:help classes\@MCMC\copy">classes\@MCMC\copy</a>                 -  makes a (deep) copy of the input MCMCs.
+%   <a href="matlab:help classes\@MCMC\decision">classes\@MCMC\decision</a>             - DECISION: Compute the MH acceptance ratio
+%   <a href="matlab:help classes\@MCMC\defineLogLikelihood">classes\@MCMC\defineLogLikelihood</a>  - (No help available)
+%   <a href="matlab:help classes\@MCMC\drawAdaptiveSample">classes\@MCMC\drawAdaptiveSample</a>   - %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   <a href="matlab:help classes\@MCMC\drawSample">classes\@MCMC\drawSample</a>           - %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   <a href="matlab:help classes\@MCMC\fromDom">classes\@MCMC\fromDom</a>              - % Get shape
+%   <a href="matlab:help classes\@MCMC\fromStruct">classes\@MCMC\fromStruct</a>           -  creates from a structure a TIMESPAN object.
+%   <a href="matlab:help classes\@MCMC\getLikelihood">classes\@MCMC\getLikelihood</a>        -  Get the likelihood function in a mfh object.
+%   classes\@MCMC\getParamNames        - (No help available)
+%   <a href="matlab:help classes\@MCMC\getPest">classes\@MCMC\getPest</a>              -  Get the estimated parameters in a pest object.
+%   <a href="matlab:help classes\@MCMC\handle_data_for_icsm">classes\@MCMC\handle_data_for_icsm</a> - (No help available)
+%   <a href="matlab:help classes\@MCMC\initObjectWithSize">classes\@MCMC\initObjectWithSize</a>   - (No help available)
+%   <a href="matlab:help classes\@MCMC\jump">classes\@MCMC\jump</a>                 - JUMP: Propose new point on the parameter space
+%   <a href="matlab:help classes\@MCMC\loadobj">classes\@MCMC\loadobj</a>              -  is called by the load function for user objects.
+%   <a href="matlab:help classes\@MCMC\logDecision">classes\@MCMC\logDecision</a>          - LOGDECISION: Compute the logarithm of the MH acceptance ratio
+%   <a href="matlab:help classes\@MCMC\main">classes\@MCMC\main</a>                 - (No help available)
+%   <a href="matlab:help classes\@MCMC\mhsample">classes\@MCMC\mhsample</a>             -  The Metropolis - Hastings algorithm
+%   <a href="matlab:help classes\@MCMC\mhutils">classes\@MCMC\mhutils</a>              - --------------------------------------------------------------------------
+%   <a href="matlab:help classes\@MCMC\performDataChecks">classes\@MCMC\performDataChecks</a>    - (No help available)
+%   <a href="matlab:help classes\@MCMC\plotLogLikelihood">classes\@MCMC\plotLogLikelihood</a>    - (No help available)
+%   <a href="matlab:help classes\@MCMC\preprocess">classes\@MCMC\preprocess</a>           - MCMC.preprocess.
+%   <a href="matlab:help classes\@MCMC\preprocessMFH">classes\@MCMC\preprocessMFH</a>        - (No help available)
+%   <a href="matlab:help classes\@MCMC\preprocessModel">classes\@MCMC\preprocessModel</a>      - --------------------------------------------------------------------------
+%   <a href="matlab:help classes\@MCMC\processChain">classes\@MCMC\processChain</a>         - PROCESSCHAIN: Get the statisticts of the MCMC Chain
+%   <a href="matlab:help classes\@MCMC\setInputs">classes\@MCMC\setInputs</a>            - (No help available)
+%   <a href="matlab:help classes\@MCMC\setModel">classes\@MCMC\setModel</a>             -  Set the model of the investigation.
+%   <a href="matlab:help classes\@MCMC\setNoise">classes\@MCMC\setNoise</a>             -  Set the measured noise of the experiment.
+%   <a href="matlab:help classes\@MCMC\simplex">classes\@MCMC\simplex</a>              -  Multidimensional unconstrained nonlinear minimization (Nelder-Mead)
+%   <a href="matlab:help classes\@MCMC\updateFIM">classes\@MCMC\updateFIM</a>            - --------------------------------------------------------------------------

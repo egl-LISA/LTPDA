@@ -1,0 +1,34 @@
+%%%%%%%%%%%%%%%%%%%%   path: classes\@pzmodel   %%%%%%%%%%%%%%%%%%%%
+%
+%   <a href="matlab:help classes\@pzmodel\abcascade">classes\@pzmodel\abcascade</a>                -  Cascade two filters together to get a new filter.
+%   <a href="matlab:help classes\@pzmodel\attachToDom">classes\@pzmodel\attachToDom</a>              - % Create empty pzmodel node with the attribute 'shape'
+%   <a href="matlab:help classes\@pzmodel\char">classes\@pzmodel\char</a>                     -  convert a pzmodel object into a string.
+%   <a href="matlab:help classes\@pzmodel\conj">classes\@pzmodel\conj</a>                     -  overloads conjugate functionality for pzmodel objects.
+%   <a href="matlab:help classes\@pzmodel\copy">classes\@pzmodel\copy</a>                     -  makes a (deep) copy of the input pzmodel objects.
+%   <a href="matlab:help classes\@pzmodel\disp">classes\@pzmodel\disp</a>                     -  overloads display functionality for pzmodel objects.
+%   <a href="matlab:help classes\@pzmodel\fngen">classes\@pzmodel\fngen</a>                    -  creates an arbitrarily long time-series based on the input pzmodel.
+%   <a href="matlab:help classes\@pzmodel\fromDom">classes\@pzmodel\fromDom</a>                  - % Get shape
+%   <a href="matlab:help classes\@pzmodel\fromLISO">classes\@pzmodel\fromLISO</a>                 -  Construct a pzmodel from a LISO file
+%   <a href="matlab:help classes\@pzmodel\fromParfrac">classes\@pzmodel\fromParfrac</a>              - %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   <a href="matlab:help classes\@pzmodel\fromPolesAndZeros">classes\@pzmodel\fromPolesAndZeros</a>        - %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   <a href="matlab:help classes\@pzmodel\fromRational">classes\@pzmodel\fromRational</a>             - %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   <a href="matlab:help classes\@pzmodel\fromStruct">classes\@pzmodel\fromStruct</a>               -  creates from a structure a PZMODEL object.
+%   <a href="matlab:help classes\@pzmodel\generateConstructorPlist">classes\@pzmodel\generateConstructorPlist</a> -  generates a PLIST from the properties which can rebuild the object.
+%   <a href="matlab:help classes\@pzmodel\getlowerFreq">classes\@pzmodel\getlowerFreq</a>             -  gets the frequency of the lowest pole or zero in the model.
+%   <a href="matlab:help classes\@pzmodel\getupperFreq">classes\@pzmodel\getupperFreq</a>             -  gets the frequency of the highest pole or zero in the model.
+%   <a href="matlab:help classes\@pzmodel\loadobj">classes\@pzmodel\loadobj</a>                  -  is called by the load function for user objects.
+%   <a href="matlab:help classes\@pzmodel\mrdivide">classes\@pzmodel\mrdivide</a>                 -  overloads the division operator for pzmodels.
+%   <a href="matlab:help classes\@pzmodel\mtimes">classes\@pzmodel\mtimes</a>                   -  overloads the multiplication operator for pzmodels.
+%   <a href="matlab:help classes\@pzmodel\pzm2ab">classes\@pzmodel\pzm2ab</a>                   -  convert pzmodel to IIR filter coefficients using bilinear transform.
+%   <a href="matlab:help classes\@pzmodel\pzmodel">classes\@pzmodel\pzmodel</a>                  -  constructor for pzmodel class.
+%   <a href="matlab:help classes\@pzmodel\rdivide">classes\@pzmodel\rdivide</a>                  -  overloads the division operator for pzmodels.
+%   <a href="matlab:help classes\@pzmodel\respCore">classes\@pzmodel\respCore</a>                 -  returns the complex response of one pzmodel object.
+%   <a href="matlab:help classes\@pzmodel\setDelay">classes\@pzmodel\setDelay</a>                 -  sets the 'delay' property of the pzmodel object.
+%   <a href="matlab:help classes\@pzmodel\setGain">classes\@pzmodel\setGain</a>                  -  sets the 'gain' property of the pzmodel object.
+%   <a href="matlab:help classes\@pzmodel\setPoles">classes\@pzmodel\setPoles</a>                 -  Set the property 'poles' of a pole/zero model.
+%   <a href="matlab:help classes\@pzmodel\setZeros">classes\@pzmodel\setZeros</a>                 -  Set the property 'zeros' of a pole/zero model.
+%   <a href="matlab:help classes\@pzmodel\simplify">classes\@pzmodel\simplify</a>                 -  simplifies pzmodels by cancelling like poles with like zeros.
+%   <a href="matlab:help classes\@pzmodel\times">classes\@pzmodel\times</a>                    -  overloads the multiplication operator for pzmodels.
+%   <a href="matlab:help classes\@pzmodel\tomfir">classes\@pzmodel\tomfir</a>                   -  approximates a pole/zero model with an FIR filter.
+%   <a href="matlab:help classes\@pzmodel\tomiir">classes\@pzmodel\tomiir</a>                   -  converts a pzmodel to an IIR filter using a bilinear transform.
+%   <a href="matlab:help classes\@pzmodel\update_struct">classes\@pzmodel\update_struct</a>            -  update the input structure to the current ltpda version
