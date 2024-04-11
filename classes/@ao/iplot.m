@@ -3153,14 +3153,14 @@ function applyPlotSettings(axesH, lineH)
       safeset(axesH(ii), 'LineWidth', double(jPlotPrefs.getPlotDefaultAxesLineWidth));
       safeset(axesH(ii), 'GridLineStyle', char(jPlotPrefs.getPlotDefaultAxesGridLineStyle));
       safeset(axesH(ii), 'MinorGridLineStyle', char(jPlotPrefs.getPlotDefaultAxesMinorGridLineStyle));
-      switch char(jPlotPrefs.getPlotDefaultAxesFontWeight)
-        case 'Plain'
+      switch lower(char(jPlotPrefs.getPlotDefaultAxesFontWeight))
+        case 'plain'
           safeset(axesH(ii), 'FontWeight', 'normal');
-        case 'Bold'
+        case 'bold'
           safeset(axesH(ii), 'FontWeight', 'bold');
-        case 'Italic'
+        case 'italic'
           safeset(axesH(ii), 'FontWeight', 'light');
-        case 'Bold Italic'
+        case 'bold italic'
           safeset(axesH(ii), 'FontWeight', 'demi');
         otherwise
           error('### Unknown value (%s) for the default axes property ''FontWeight''', char(jPlotPrefs.getPlotDefaultAxesFontWeight));
