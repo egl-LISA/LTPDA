@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlotStyles version="1.0">
+   <PlotStyles>
+      <Style color="-12290134" fillmarkers="false" linestyle="-" linewidth="1.0" marker="none" markerEdgeColor="-16776961" markerFaceColor="-16776961" markersize="10.0"/>
+      <Style color="-1153417" fillmarkers="false" linestyle="-" linewidth="1.0" marker="none" markerEdgeColor="-65536" markerFaceColor="-65536" markersize="10.0"/>
+      <Style color="-14514125" fillmarkers="false" linestyle="-" linewidth="1.0" marker="none" markerEdgeColor="-16711936" markerFaceColor="-16711936" markersize="10.0"/>
+      <Style color="-3359932" fillmarkers="false" linestyle="-" linewidth="1.0" marker="none" markerEdgeColor="-16711681" markerFaceColor="-16711681" markersize="10.0"/>
+      <Style color="-10040082" fillmarkers="false" linestyle="-" linewidth="1.0" marker="none" markerEdgeColor="-14336" markerFaceColor="-14336" markersize="10.0"/>
+      <Style color="-5622921" fillmarkers="false" linestyle="-" linewidth="1.0" marker="none" markerEdgeColor="-65281" markerFaceColor="-65281" markersize="10.0"/>
+      <Style color="-4473925" fillmarkers="false" linestyle="-" linewidth="1.0" marker="none" markerEdgeColor="-16777216" markerFaceColor="-16777216" markersize="10.0"/>
+      <Style color="-1149133" fillmarkers="false" linestyle="--" linewidth="1.0" marker="none" markerEdgeColor="-16776961" markerFaceColor="-16776961" markersize="10.0"/>
+      <Style color="-16746565" fillmarkers="false" linestyle="--" linewidth="1.0" marker="none" markerEdgeColor="-65536" markerFaceColor="-65536" markersize="10.0"/>
+      <Style color="-13386770" fillmarkers="false" linestyle="--" linewidth="1.0" marker="none" markerEdgeColor="-16711936" markerFaceColor="-16711936" markersize="10.0"/>
+      <Style color="-1166473" fillmarkers="false" linestyle="--" linewidth="1.0" marker="none" markerEdgeColor="-16711681" markerFaceColor="-16711681" markersize="10.0"/>
+      <Style color="-3394799" fillmarkers="false" linestyle="--" linewidth="1.0" marker="none" markerEdgeColor="-14336" markerFaceColor="-14336" markersize="10.0"/>
+      <Style color="-16737912" fillmarkers="false" linestyle="--" linewidth="1.0" marker="none" markerEdgeColor="-65281" markerFaceColor="-65281" markersize="10.0"/>
+      <Style color="-16777216" fillmarkers="false" linestyle="--" linewidth="1.0" marker="none" markerEdgeColor="-16777216" markerFaceColor="-16777216" markersize="10.0"/>
+   </PlotStyles>
+</PlotStyles>

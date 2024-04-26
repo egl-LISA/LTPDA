@@ -11,40 +11,45 @@ function conn = connect(hostname, database, username, password)
 % is thrown. On other errors an utils:mysql:connect:ConnectionError
 % exception is thrown.
 
-  % informative message
-  import utils.const.*
-  utils.helper.msg(msg.PROC1, 'connection to mysql://%s/%s username=%s', hostname, database, username);
+% informative message
+import utils.const.*
+utils.helper.msg(msg.PROC1, 'connection to mysql://%s:3306/%s username=%s', ...
+    hostname, database, username);
 
-  % connection credential
-  uri = sprintf('jdbc:mysql://%s/%s', hostname, database);
-  db = javaObject('com.mysql.jdbc.Driver');
-  pl = javaObject('java.util.Properties');
-  pl.setProperty(db.USER_PROPERTY_KEY, username);
-  pl.setProperty(db.PASSWORD_PROPERTY_KEY, password);
+% connection credential
+uri = sprintf('jdbc:mysql://%s/%s', hostname, database);
+db = javaObject('com.mysql.cj.jdbc.Driver');
+option_list = javaObject('java.util.Properties');
+option_list.setProperty('user', username);
+option_list.setProperty('password', password);
 
-  try
+try
     % connect
-    conn = db.connect(uri, pl);
-  catch ex
+    conn = db.connect(uri, option_list);
+catch ex
     % exceptions handling in matlab sucks
     if strcmp(ex.identifier, 'MATLAB:Java:GenericException')
-      % extract exception class and message
-      lines = regexp(ex.message, '\n', 'split');
-      p = strfind(lines{2}, ': ');
-      id = lines{2}(1:p(1)-1);
-      message = lines{2}(p(1)+2:end);
-      % some notable cases
-      switch id
-        case 'java.sql.SQLException'
-          throwAsCaller(MException('utils:mysql:connect:AccessDenied', '### access denied: %s', message))
-        case 'com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException'
-          throwAsCaller(MException('utils:mysql:connect:ConnectionError', '### connection error: %s. check database name', message))
-        case 'com.mysql.jdbc.exceptions.jdbc4.CommunicationsException'
-          throwAsCaller(MException('utils:mysql:connect:ConnectionError', '### connection error: %s. check hostname', message))
-      end
-      % user friendlier exception
-      throwAsCaller(MException('utils:mysql:connect:ConnectionError', '### connection error: %s: %s', id, message))
+        % extract exception class and message
+        lines = regexp(ex.message, '\n', 'split');
+        p = strfind(lines{2}, ': ');
+        id = lines{2}(1:p(1)-1);
+        message = lines{2}(p(1)+2:end);
+        % some notable cases
+        switch id
+            case 'java.sql.SQLException'
+                throwAsCaller(MException('utils:mysql:connect:AccessDenied', ...
+                    '### access denied: %s', message))
+            case 'java.sql.SQLSyntaxErrorException'
+                throwAsCaller(MException('utils:mysql:connect:ConnectionError', ...
+                    '### connection error: %s. check database name', message))
+            case 'com.mysql.cj.jdbc.exceptions.CommunicationsException'
+                throwAsCaller(MException('utils:mysql:connect:ConnectionError', ...
+                    '### connection error: %s. check hostname', message))
+        end
+        % user friendlier exception
+        throwAsCaller(MException('utils:mysql:connect:ConnectionError', ...
+            '### connection error: %s: %s', id, message))
     end
     rethrow(ex);
-  end
+end
 end

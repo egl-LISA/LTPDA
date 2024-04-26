@@ -31,7 +31,11 @@ function varargout = heterodyne(varargin)
   
   % Collect input variable names
   in_names = cell(size(varargin));
-  try for ii = 1:nargin,in_names{ii} = inputname(ii); end; end
+  try 
+      for ii = 1:nargin
+          in_names{ii} = inputname(ii); 
+      end
+  end
   
   % Collect all AOs
   [as, ao_invars] = utils.helper.collect_objects(varargin(:), 'ao', in_names);

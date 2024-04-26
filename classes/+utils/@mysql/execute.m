@@ -29,7 +29,7 @@ function varargout = execute(conn, query, varargin)
   if nargin < 2
     error('### incorrect usage');
   end
-  if ~isa(conn, 'java.sql.Connection')
+  if ~isa(conn, 'com.mysql.cj.jdbc.ConnectionImpl')
     error('### invalid connection');
   end
   
@@ -55,14 +55,10 @@ function varargout = execute(conn, query, varargin)
       nc = md.getColumnCount();
       row = 1;
       
-      if isa(rs, 'com.mysql.jdbc.JDBC4ResultSet')
+      if isa(rs, 'com.mysql.cj.jdbc.result.ResultSetImpl')
         % Get size of the output cell
-        rs.beforeFirst();
-        rs.last();
         nRows = rs.getRow();
         nCol  = nc;
-        % Set the pointer back before the first record
-        rs.beforeFirst();
         
         % Pre-define
         rows = cell(nRows, nCol);
