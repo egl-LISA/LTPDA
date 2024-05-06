@@ -1,10 +1,10 @@
 % LTPDA Toolbox
-% Version 3.0.14.dev (R2017b) 10-12-18
+% Version 3.1.ddb (R2024a) 07-05-2024
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Toolbox        LTPDA
 %
-% Version        3.0.14.dev (R2017b) 10-12-18
+% Version        3.1.ddb (R2024a) 07-05-2024
 %
 % Contents path  C:\Users\Davide\Documents\MATLAB\ltpda_toolbox\ltpda
 %
