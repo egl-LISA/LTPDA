@@ -1,5 +1,5 @@
 % SUBMIT Submits the given collection of objects to an LTPDA repository
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % DESCRIPTION: Submits the given collection of objects to an LTPDA
 %              repository. If multiple objects are submitted together a
@@ -32,7 +32,7 @@
 %   'additional comments'    - additional comments
 %   'additional authors'     - additional author names
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Notes on submission
 %
@@ -43,8 +43,6 @@
 % true, then we set the validated flag in the database after submission if
 % it passes.
 %
-%
-
 
 function varargout = submit(varargin)
   
@@ -194,7 +192,7 @@ function varargout = submit(varargin)
       obj = copy(obj, 1);
       
       % create an XML representaion of the object
-      if utils.prog.yes2true(pls.find_core('binary'));
+      if utils.prog.yes2true(pls.find_core('binary'))
         utils.helper.msg(msg.PROC2, 'binary submit');
         otxt = ['binary submit ' datestr(now)];
       else
