@@ -74,6 +74,19 @@ LTPDA_ADD_HISTORY = false;
 %--------------------------------------------------------------------------
 %--------------------------------------------------------------------------
 
+% Update git hash for ltpda from .git folder
+% I do not need to update UniTN_Module.hash because the program makes it
+% automatically somewhere
+base_path = fullfile(fileparts(which('ltpda_startup')), '..', '..');
+githash_file = fullfile(base_path, '.git', 'FETCH_HEAD');
+githash = fileread(githash_file);
+
+ltpda_hash_file = fullfile(base_path, '.hash', 'ltpda.hash');
+fileID = fopen(ltpda_hash_file,'w');
+fprintf(fileID, githash(1:40));
+fclose(fileID);
+
+%--------------------------------------------------------------------------
 % Format of numbers on MATLAB terminal
 format long g
 
