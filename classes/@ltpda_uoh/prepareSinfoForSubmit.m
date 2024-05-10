@@ -1,4 +1,5 @@
-% PREPARESINFOFORSUBMIT This method prepend the timespan as a XML-String to the submission structure.
+% PREPARESINFOFORSUBMIT This method prepend the timespan as a XML-String to 
+% the submission structure.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % DESCRIPTION: PREPARESINFOFORSUBMIT This method prepend the timespan
@@ -38,7 +39,7 @@ function xml = createXML(obj)
   rootElement = doc.createElement('ltpda_uoh');
   doc.appendChild(rootElement);
   
-  % Chreate root child: timespan
+  % Create root child: timespan
   timespanNode = doc.createElement('timespan');
   rootElement.appendChild(timespanNode);
   
