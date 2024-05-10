@@ -1,3 +1,4 @@
 .svn*
 .hash*
-.asv*
+*.hash
+*.asv*
