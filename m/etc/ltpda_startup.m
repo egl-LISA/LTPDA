@@ -13,7 +13,6 @@ function ltpda_startup
 try
     rmappdata(0, 'LTPDApreferences');
 end
-
 % Remove the database connection manager
 try
     rmappdata(0, 'LTPDADatabaseConnectionManager');
@@ -81,7 +80,11 @@ base_path = fullfile(fileparts(which('ltpda_startup')), '..', '..');
 githash_file = fullfile(base_path, '.git', 'FETCH_HEAD');
 githash = fileread(githash_file);
 
-ltpda_hash_file = fullfile(base_path, '.hash', 'ltpda.hash');
+ltpda_hash_folder = fullfile(base_path, '.hash');
+ltpda_hash_file = fullfile(ltpda_hash_folder, 'ltpda.hash');
+if ~isfolder(ltpda_hash_folder)
+    mkdir(ltpda_hash_folder)
+end
 fileID = fopen(ltpda_hash_file,'w');
 fprintf(fileID, githash(1:40));
 fclose(fileID);
@@ -98,7 +101,7 @@ jardir = fullfile(fileparts(which('ltpda_startup')), '..', '..', 'jar');
 jars = dir(jardir);
 for c = 1:numel(jars)
     s = jars(c);
-    [path, name, ext] = fileparts(s.name);
+    [~, ~, ext] = fileparts(s.name);
     if strcmp(ext, '.jar')
         javaaddpath(fullfile(jardir, s.name));
     end
@@ -108,7 +111,7 @@ jardir = fullfile(fileparts(which('ltpda_startup')), '..', '..', 'jar', 'lib');
 jars = dir(jardir);
 for c = 1:numel(jars)
     s = jars(c);
-    [path, name, ext] = fileparts(s.name);
+    [~, ~, ext] = fileparts(s.name);
     if strcmp(ext, '.jar')
         javaaddpath(fullfile(jardir, s.name));
     end
@@ -216,7 +219,7 @@ for jj = 1:length(vs)
         case 'Statistics Toolbox'
             statistics_version = [v.Version ' ' v.Release];
         case 'LTPDA Toolbox'
-            ltpda_version = [v.Version ' ' matlabRelease.Release];
+            ltpda_version = [v.Version ' ' v.Release];
     end
 end
 
@@ -298,7 +301,7 @@ for kk=1:numel(extPaths)
     files = utils.prog.filescan(p, '.jar');
     for ff=1:numel(files)
         f = files{ff};
-        [path, name, ext] = fileparts(f);
+        [~, ~, ext] = fileparts(f);
         if strcmp(ext, '.jar')
             javaaddpath(f);
         end
