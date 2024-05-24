@@ -258,7 +258,8 @@ try
         stmt.setObject( 2, java.lang.String(class(obj)));
         stmt.setObject( 3, java.lang.String(obj.name));
         stmt.setObject( 4, java.lang.String(created));
-        stmt.setObject( 5, java.lang.String(strjoin(getappdata(0, 'ltpda_version'), '')));
+
+        stmt.setObject( 5, java.lang.String(join(getappdata(0, 'ltpda_version'), '')));
         stmt.setObject( 6, java.lang.String(prov.ip));
         stmt.setObject( 7, java.lang.String(prov.hostname));
         stmt.setObject( 8, java.lang.String(prov.os));
