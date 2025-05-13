@@ -26,7 +26,7 @@ function varargout = copy(varargin)
   
   if deepcopy
     % Loop over input pzmodel objects
-    new = pzmodel.newarray(size(old));
+    new = createArray(size(old), 'pzmodel');
     obj = copy@ltpda_tf(new, old, 1, addHist);
     
     for kk=1:numel(old)

@@ -153,7 +153,7 @@ classdef (Hidden = true) provenance < ltpda_nuo
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = provenance.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'provenance');
     end
     
   end % End static methods

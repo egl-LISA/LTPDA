@@ -473,7 +473,7 @@ classdef timespan < ltpda_uoh
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = timespan.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'timespan');
     end
     
   end

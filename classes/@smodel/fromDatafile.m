@@ -162,7 +162,7 @@ function mdl = fromDatafile(mdlin, pli)
   xunits = checkArray(xunits, maxi, maxj);
   yunits = checkArray(yunits, maxi, maxj);
   
-  mdl = smodel.newarray([maxi, maxj]);
+  mdl = createArray([maxi, maxj], 'smodel');
   
   % Check mandatory fields
   if isempty(expr) || isempty(params) || isempty(xvar) || isempty(values)

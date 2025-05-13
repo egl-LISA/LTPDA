@@ -18,7 +18,7 @@ function varargout = copy(old, deepcopy)
   
   if deepcopy
     % Loop over input unit objects
-    new = unit.newarray(size(old));
+    new = createArray(size(old), 'unit');
     
     for kk=1:numel(old)
       new(kk).strs = old(kk).strs;

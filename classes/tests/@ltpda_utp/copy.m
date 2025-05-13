@@ -18,7 +18,7 @@ function varargout = copy(old, deepcopy)
   
   if deepcopy
     % Loop over input ltpda_utp objects
-    new = ltpda_utp.newarray(size(old));
+    new = createArray(size(old), 'ltpda_utp');
     
   else
     new = old;

@@ -18,7 +18,7 @@ function varargout = copy(old, deepcopy)
   
   if deepcopy
     % Loop over input time objects
-    new = time.newarray(size(old));
+    new = createArray(size(old), 'time');
     
     for kk=1:numel(old)
       new(kk).utc_epoch_milli = old(kk).utc_epoch_milli;

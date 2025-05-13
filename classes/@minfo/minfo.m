@@ -9,7 +9,7 @@
 % CONSTRUCTORS:
 %     
 %       m = minfo()               - creates an empty object
-%       m = minfo(mname,      ... - 
+%       m = minfo(mname,      ... 
 %                 mclass,     ...
 %                 mpackage,   ...
 %                 mcategory,  ...
@@ -301,7 +301,8 @@ classdef (Hidden = true) minfo < ltpda_nuo
     function c = allNumericDataTypes()
       % allNumericDataTypes This method returns a cell array of all
       % MATLAB's numeric types including 'logical'
-      c = {'double', 'single', 'int8', 'int16', 'int32', 'int64', 'uint8', 'uint16', 'uint32', 'uint64', 'logical'};
+      c = {'double', 'single', 'int8', 'int16', 'int32', 'int64', 'uint8', ...
+          'uint16', 'uint32', 'uint64', 'logical'};
     end
     
     function ii = getInfo(varargin)
@@ -322,7 +323,7 @@ classdef (Hidden = true) minfo < ltpda_nuo
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = minfo.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'minfo');
     end
     
     varargout = getInfoAxis(varargin);

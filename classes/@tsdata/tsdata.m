@@ -310,7 +310,7 @@ classdef (Hidden = true) tsdata < data2D
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = tsdata.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'tsdata');
     end
     
   end

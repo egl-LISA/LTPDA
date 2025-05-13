@@ -597,7 +597,7 @@ classdef ao < ltpda_uoh
             utils.helper.msg(msg.PROC1, 'constructing from X and Y values');
             obj = obj.fromXYVals(plist('XVALS', args{1}, 'YVALS', args{2}), callerIsMethod);
             
-          elseif isnumeric(args{1}) && isnumeric(args{2}) && numel(args{2}) == 1
+          elseif isnumeric(args{1}) && isnumeric(args{2}) && isscalar(args{2})
             %%%%%%%%%%   ao(y-vector, fs)   %%%%%%%%%%
             utils.helper.msg(msg.PROC1, 'constructing from Y values and fs');
             obj = obj.fromXYVals(plist('YVALS', args{1}, 'fs', args{2}, 'xunits', unit.seconds), callerIsMethod);
@@ -657,7 +657,7 @@ classdef ao < ltpda_uoh
           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
           
           if  isnumeric(args{1}) && isnumeric(args{2}) && isnumeric(args{3}) && ...
-              numel(args{1}) == numel(args{2}) && numel(args{3}) == 1
+              numel(args{1}) == numel(args{2}) && isscalar(args{3})
             %%%%%%%%%%   ao(x-vector, y-vector, fs)   %%%%%%%%%%
             
             utils.helper.msg(msg.PROC1, 'constructing from X and Y values and frequency.');
@@ -984,7 +984,7 @@ classdef ao < ltpda_uoh
     end
     
     function objs = initObjectWithSize(varargin)
-      objs = ao.newarray([varargin{:}]);
+      objs = createArray([varargin{:}], 'ao');
       for ii = 1:numel(objs)
         obj = objs(ii);
         addlistener(obj, 'timespan', 'PreGet', @obj.getPropEvt);

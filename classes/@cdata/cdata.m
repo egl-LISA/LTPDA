@@ -148,7 +148,7 @@ classdef (Hidden = true) cdata < ltpda_data
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = cdata.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'cdata');
     end
     
   end

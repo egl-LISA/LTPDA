@@ -119,7 +119,7 @@ classdef LTPDANamedItem < ltpda_uo
       for kk=1:numel(objs)
         out = [out {objs(kk).name}];
       end
-      if numel(out) == 1
+      if isscalar(out)
         out = out{1};
       end
     end % End char()
@@ -135,7 +135,7 @@ classdef LTPDANamedItem < ltpda_uo
       % preferred aliases are defined for some daughter classes (MTelemetry
       % and it's daughters LTPDATelemetry and ST7Telemetry). Here we
       % provide a default behavior that returns the names.
-      if numel(objs) == 1
+      if isscalar(objs)
         out = objs.name;
       else
         out = {objs.name};
@@ -172,7 +172,7 @@ classdef LTPDANamedItem < ltpda_uo
     varargout = listContentsOfGroup(varargin)
 
     function obj = initObjectWithSize(varargin)
-      obj = LTPDANamedItem.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'LTPDANamedItem');
     end
     function ii = getInfo(varargin)
       ii = utils.helper.generic_getInfo(varargin{:}, mfilename('class'));

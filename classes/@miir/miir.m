@@ -412,7 +412,7 @@ classdef miir < ltpda_filter
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = miir.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'miir');
     end
     
   end

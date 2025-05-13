@@ -274,7 +274,7 @@ classdef (Sealed = true, Hidden = true) history < ltpda_nuo
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = history.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'history');
     end
     
   end

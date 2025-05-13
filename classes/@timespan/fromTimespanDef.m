@@ -34,14 +34,14 @@ function obj = fromTimespanDef(obj, pli, callerIsMethod)
   tf = find_core(pl, 'timeformat');
   tz = find_core(pl, 'timezone');
   
-  if isa(t1, 'time');
+  if isa(t1, 'time')
     % if parameter is a time object copy it
     t1 = copy(t1, 1);
   else
     % otherwise costruct a time object from input parameters
     t1 = time(plist('time', t1, 'timeformat', tf, 'timezone', tz));
   end
-  if isa(t2, 'time');
+  if isa(t2, 'time')
     % if parameter is a time object copy it
     t2 = copy(t2, 1);
   else

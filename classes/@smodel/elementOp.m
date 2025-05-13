@@ -43,7 +43,7 @@ function varargout = elementOp(varargin)
     expr = mdl1;
     varNames{1} = num2str(expr);
     % Create an array with the same size of the second input
-    mdl1 = smodel.newarray(size(mdl2));
+    mdl1 = createArray(size(mdl2), 'smodel');
     % Copy the object and replace the expression
     for ii = 1:numel(mdl2)
       mdl1(ii) = copy(mdl2(ii), true);
@@ -59,7 +59,7 @@ function varargout = elementOp(varargin)
     expr = mdl2;
     varNames{2} = num2str(expr);
     % Create an array with the same size of the first input
-    mdl2 = smodel.newarray(size(mdl1));
+    mdl2 = createArray(size(mdl1), 'smodel');
     % Copy the object and replace the expression
     for ii = 1:numel(mdl1)
       mdl2(ii) = copy(mdl1(ii), true);
@@ -75,10 +75,10 @@ function varargout = elementOp(varargin)
   
   % Convert cdata aos into a smodel object
   if isa(mdl2, 'ao')
-    if isa(mdl2.data, 'cdata') && numel(mdl2.data.y) == 1
+    if isa(mdl2.data, 'cdata') && isscalar(mdl2.data.y)
       expr = mdl2.y;
       % Create an array with the same size of the first input
-      mdl2 = smodel.newarray(size(mdl1));
+      mdl2 = createArray(size(mdl1), 'smodel');
       % Copy the object and replace the expression
       for ii = 1:numel(mdl1)
         mdl2(ii) = copy(mdl1(ii), true);
@@ -92,11 +92,11 @@ function varargout = elementOp(varargin)
   
   %%%%%%%%%%   If the first or second input is only one object then   %%%%%%%%%%
   %%%%%%%%%%   resize the input to the size of the other object.      %%%%%%%%%%
-  if numel(mdl1) == 1 && numel(mdl1) ~= numel(mdl2)
+  if isscalar(mdl1) && numel(mdl1) ~= numel(mdl2)
     mdl1(1:numel(mdl2)) = mdl1;
     mdl1 = reshape(mdl1, size(mdl2));
   end
-  if numel(mdl2) == 1 && numel(mdl2) ~= numel(mdl1)
+  if isscalar(mdl2) && numel(mdl2) ~= numel(mdl1)
     mdl2(1:numel(mdl1)) = mdl2;
     mdl2 = reshape(mdl2, size(mdl1));
   end
@@ -106,7 +106,7 @@ function varargout = elementOp(varargin)
   end
   
   %%%%%%%%%%   Add each element inside the array   %%%%%%%%%%
-  mdl = smodel.newarray(size(mdl1));
+  mdl = createArray(size(mdl1), 'smodel');
   for kk = 1:numel(mdl1)
     switch opsym
       case {'.*', '*'} 

@@ -53,7 +53,7 @@ classdef (Hidden = true) ltpda_container < ltpda_uoh
       ii = utils.helper.generic_getInfo(varargin{:}, mfilename('class'));
     end
     function obj = initObjectWithSize(varargin)
-      obj = ltpda_container.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'ltpda_container');
     end
   end
   

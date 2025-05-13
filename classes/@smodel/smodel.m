@@ -414,7 +414,7 @@ classdef smodel < ltpda_uoh
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = smodel.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'smodel');
     end
     
   end % End static methods

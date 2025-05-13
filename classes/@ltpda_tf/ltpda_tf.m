@@ -146,7 +146,7 @@ classdef (Hidden = true) ltpda_tf < ltpda_uoh
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = ltpda_tf.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'ltpda_tf');
     end
   end
   

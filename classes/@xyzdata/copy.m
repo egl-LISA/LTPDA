@@ -1,5 +1,5 @@
 % COPY makes a (deep) copy of the input xyzdata objects.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % DESCRIPTION: COPY makes a deep copy of the input xyzdata objects.
 %
@@ -12,21 +12,17 @@
 %
 % This is a transparent function and adds no history.
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function varargout = copy(old, deepcopy)
-  
-  if deepcopy
+
+if deepcopy
     % Loop over input xyzdata objects
-    new = xyzdata.newarray(size(old));
+    new = createArray(size(old), 'xyzdata');
     obj = copy@data3D(new, old, 1);
-    
-    for kk=1:numel(old)
-    end
-  else
+else
     obj = old;
-  end
-  
-  varargout{1} = obj;
 end
 
+varargout{1} = obj;
+end

@@ -1,5 +1,5 @@
 % COPY makes a (deep) copy of the input paramValue objects.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % DESCRIPTION: COPY makes a deep copy of the input paramValue objects.
 %
@@ -12,31 +12,30 @@
 %
 % This is a transparent function and adds no history.
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function varargout = copy(old, deepcopy)
-  
-  if deepcopy
+
+if deepcopy
     % Loop over input paramValue objects
-    new = paramValue.newarray(size(old));
-    
+    new = createArray(size(old), 'paramValue');
+
     for kk=1:numel(old)
-      new(kk).valIndex  = old(kk).valIndex;
-      new(kk).selection = old(kk).selection;
-      new(kk).property  = old(kk).property;
-      new(kk).options   = cell(size(old(kk).options));
-      for ff=1:numel(old(kk).options)
-        if isa(old(kk).options{ff}, 'ltpda_obj')
-          new(kk).options{ff} = copy(old(kk).options{ff}, 1);
-        else
-          new(kk).options{ff} = old(kk).options{ff};
+        new(kk).valIndex  = old(kk).valIndex;
+        new(kk).selection = old(kk).selection;
+        new(kk).property  = old(kk).property;
+        new(kk).options   = cell(size(old(kk).options));
+        for ff=1:numel(old(kk).options)
+            if isa(old(kk).options{ff}, 'ltpda_obj')
+                new(kk).options{ff} = copy(old(kk).options{ff}, 1);
+            else
+                new(kk).options{ff} = old(kk).options{ff};
+            end
         end
-      end
     end
-  else
+else
     new = old;
-  end
-  
-  varargout{1} = new;
 end
 
+varargout{1} = new;
+end

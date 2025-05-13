@@ -206,7 +206,7 @@ classdef (Hidden = true) specwin < ltpda_nuo
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = specwin.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'specwin');
     end
     
   end % End static methods

@@ -291,7 +291,7 @@ classdef matrix < ltpda_container
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = matrix.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'matrix');
     end
     
   end

@@ -9,7 +9,6 @@
 %                    fieldname 'd'
 % 
 % All other behaviour is default MATLAB behaviour.
-% 
 
 function varargout = subsasgn(obj, s, val)
   
@@ -46,7 +45,7 @@ function varargout = subsasgn(obj, s, val)
     % into a double which doesn't work.
     % That means we have to initialise the empty 'A' with an empty
     % collection-object.
-    obj = collection.newarray([0 1]);
+    obj = createArray([0 1], 'collection');
   end
   [varargout{1:nargout}] = builtin('subsasgn', obj, s, val);
   

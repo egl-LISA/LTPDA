@@ -135,7 +135,7 @@ classdef (Hidden = true) ltpda_uoh < ltpda_uo
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = ltpda_uoh.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'ltpda_uoh');
     end
   end
   

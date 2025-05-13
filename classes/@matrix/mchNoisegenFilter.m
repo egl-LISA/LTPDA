@@ -163,7 +163,7 @@ function varargout = mchNoisegenFilter(varargin)
   end
   
   % extracting csd
-  if numel(csdao)==1 % one dimensional psd
+  if isscalar(csdao) % one dimensional psd
     csd = csdao.y;
     freq = csdao.x;
     dim = 'one';
@@ -253,10 +253,6 @@ function varargout = mchNoisegenFilter(varargin)
       
       switch target
         case 'miir'
-          % init filters array
-          %fbk(nn*nn,1) = filterbank;
-          %fbk = filterbank.newarray([nn nn]);
-          
           for zz=1:nn*nn % run over system dimension
             % --- get column filter coefficients ---
             % each column of mres\mpoles are the coefficients of a given filter

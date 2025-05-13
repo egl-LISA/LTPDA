@@ -182,7 +182,7 @@ classdef (Hidden = true) ltpda_uo < ltpda_obj
   
   methods (Access = public, Static = true)
     function obj = initObjectWithSize(varargin)
-      obj = ltpda_uo.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'ltpda_uo');
     end
   end
   

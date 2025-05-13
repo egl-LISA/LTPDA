@@ -1,5 +1,5 @@
 % COPY makes a (deep) copy of the input cdata objects.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % DESCRIPTION: COPY makes a deep copy of the input cdata objects.
 %
@@ -12,19 +12,18 @@
 %
 % This is a transparent function and adds no history.
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function varargout = copy(old, deepcopy)
-  
-  if deepcopy
+
+if deepcopy
     % Loop over input cdata objects
-    new = cdata.newarray(size(old));
+    new = createArray(size(old), 'cdata');
     new = copy@ltpda_data(new, old, 1);
-    
-  else
+
+else
     new = old;
-  end
-  
-  varargout{1} = new;
 end
 
+varargout{1} = new;
+end

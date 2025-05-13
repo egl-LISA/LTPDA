@@ -156,7 +156,7 @@ classdef (Sealed = true, Hidden = true) param < ltpda_nuo
           if iscell(varargin{1})
             %%%%%%%%%%  obj = param({'key', 'desc'}, ...)   %%%%%%%%%%
             obj.key = varargin{1}{1};
-            if ischar(varargin{1}{2});
+            if ischar(varargin{1}{2})
               obj.desc = varargin{1}{2};
             else
               error('### The description of a parameter must be a string but it is from the class [%s]', class(varargin{1}{2}));
@@ -206,7 +206,7 @@ classdef (Sealed = true, Hidden = true) param < ltpda_nuo
       %         and/or fromFile might return more objects than one.
       for ii=1:numel(obj)
         % check if we need to keep a param value or not
-        if isa(obj(ii).val, 'paramValue') && numel(obj(ii).val.options) == 1 && ...
+        if isa(obj(ii).val, 'paramValue') && isscalar(obj(ii).val.options) && ...
             isempty(obj(ii).val.property)
           obj(ii).val = obj(ii).val.options{1};
         end
@@ -379,7 +379,7 @@ classdef (Sealed = true, Hidden = true) param < ltpda_nuo
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = param.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'param');
     end
     
   end

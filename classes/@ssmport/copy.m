@@ -1,5 +1,5 @@
 % COPY makes a (deep) copy of the input ssmport objects.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % DESCRIPTION: COPY makes a deep copy of the input ssmport objects.
 %
@@ -12,28 +12,24 @@
 %
 % This is a transparent function and adds no history.
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function varargout = copy(old, deepcopy)
-  
-  if deepcopy
+
+if deepcopy
     % Loop over input ssmport objects
-    new = ssmport.newarray(size(old));
-    
+    new = createArray(size(old), 'ssmport');
+
     for kk=1:numel(old)
-      new(kk).name        = old(kk).name;
-      
-      if isempty(old(kk).units)
-      else
-        new(kk).units       = copy(old(kk).units, 1);
-      end
-      
-      new(kk).description = old(kk).description;
+        new(kk).name = old(kk).name;
+        if ~isempty(old(kk).units)
+            new(kk).units = copy(old(kk).units, 1);
+        end
+        new(kk).description = old(kk).description;
     end
-  else
+else
     new = old;
-  end
-  
-  varargout{1} = new;
 end
 
+varargout{1} = new;
+end

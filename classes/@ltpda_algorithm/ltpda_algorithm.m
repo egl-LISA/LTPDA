@@ -343,7 +343,7 @@ classdef (Hidden = true) ltpda_algorithm < ltpda_uoh
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = ltpda_algorithm.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'ltpda_algorithm');
     end
     
   end % methods (Access = public, Static=true)

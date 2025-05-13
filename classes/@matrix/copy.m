@@ -1,5 +1,5 @@
 % COPY makes a (deep) copy of the input matrix objects.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % DESCRIPTION: COPY makes a deep copy of the input matrix objects.
 %
@@ -11,33 +11,32 @@
 %
 % OUTPUTS:     b - copy of inputs
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function varargout = copy(varargin)
-  
-  old     = varargin{1};
-  addHist = false;
-  if nargin == 1
+
+old     = varargin{1};
+addHist = false;
+if nargin == 1
     deepcopy = true;
     addHist  = true;
-  else
+else
     deepcopy = varargin{2};
-  end
-  
-  if deepcopy
-    % Loop over input matrix objects
-    new = matrix.newarray(size(old));
-    obj = copy@ltpda_uoh(new, old, 1, addHist);
-    
-    for kk=1:numel(old)
-      if ~isempty(old(kk).objs) && isa(old(kk).objs, 'ltpda_obj')
-        obj(kk).objs = copy(old(kk).objs, 1);
-      end
-    end
-  else
-    obj = old;
-  end
-  
-  varargout{1} = obj;
 end
 
+if deepcopy
+    % Loop over input matrix objects
+    new = createArray(size(old), 'matrix');
+    obj = copy@ltpda_uoh(new, old, 1, addHist);
+
+    for kk=1:numel(old)
+        if ~isempty(old(kk).objs) && isa(old(kk).objs, 'ltpda_obj')
+            obj(kk).objs = copy(old(kk).objs, 1);
+        end
+    end
+else
+    obj = old;
+end
+
+varargout{1} = obj;
+end

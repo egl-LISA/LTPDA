@@ -283,7 +283,7 @@ classdef (Hidden = true) unit < ltpda_nuo
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = unit.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'unit');
     end
     
     %----------------------------------------

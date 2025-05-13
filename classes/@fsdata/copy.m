@@ -1,5 +1,5 @@
 % COPY makes a (deep) copy of the input fsdata objects.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % DESCRIPTION: COPY makes a deep copy of the input fsdata objects.
 %
@@ -12,25 +12,24 @@
 %
 % This is a transparent function and adds no history.
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function varargout = copy(old, deepcopy)
-  
-  if deepcopy
+
+if deepcopy
     % Loop over input fsdata objects
-    new = fsdata.newarray(size(old));
+    new = createArray(size(old), 'fsdata');
     obj = copy@data2D(new, old, 1);
-    
+
     for kk=1:numel(old)
-      obj(kk).t0     = copy(old(kk).t0, 1);
-      obj(kk).navs   = old(kk).navs;
-      obj(kk).fs     = old(kk).fs;
-      obj(kk).enbw   = old(kk).enbw;
+        obj(kk).t0   = copy(old(kk).t0, 1);
+        obj(kk).navs = old(kk).navs;
+        obj(kk).fs   = old(kk).fs;
+        obj(kk).enbw = old(kk).enbw;
     end
-  else
+else
     obj = old;
-  end
-  
-  varargout{1} = obj;
 end
 
+varargout{1} = obj;
+end

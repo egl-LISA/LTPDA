@@ -380,7 +380,7 @@ classdef mfh < ltpda_uoh
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = mfh.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'mfh');
     end
     
     function ii = getInfo(varargin)

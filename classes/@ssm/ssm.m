@@ -741,7 +741,7 @@ classdef ssm < ltpda_uoh
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = ssm.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'ssm');
     end
     
   end % End public static methods

@@ -143,7 +143,7 @@ classdef (Hidden = true) fsdata < data2D
             %%%%%%%%%%   obj = fsdata(DOM node, history-objects)   %%%%%%%%%%
             obj = fromDom(obj, varargin{1}, varargin{2});
             
-          elseif numel(varargin{1}) > numel(varargin{2}) && numel(varargin{2}) == 1
+          elseif numel(varargin{1}) > numel(varargin{2}) && isscalar(varargin{2})
             %%%%%%%%%%   data = fsdata(y-vector, fs)   %%%%%%%%%%
             % fsdata(y,fs)
             obj.setY(varargin{1});
@@ -163,7 +163,7 @@ classdef (Hidden = true) fsdata < data2D
           %%%%%%%%%%%%%%%%%%%%%%%%%%   three input   %%%%%%%%%%%%%%%%%%%%%%%%%%
           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
           
-          if numel(varargin{1}) == numel(varargin{2}) && numel(varargin{3}) == 1
+          if numel(varargin{1}) == numel(varargin{2}) && isscalar(varargin{3})
             %%%%%%%%%%   data = fsdata(x-vector, y-vector, fs)   %%%%%%%%%%
             % fsdata(x,y,fs)
             obj.setXY(varargin{1}, varargin{2});
@@ -223,7 +223,7 @@ classdef (Hidden = true) fsdata < data2D
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = fsdata.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'fsdata');
     end
     
   end % End static methods

@@ -360,7 +360,7 @@ classdef parfrac < ltpda_tf
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = parfrac.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'parfrac');
     end
     
   end % End static methods

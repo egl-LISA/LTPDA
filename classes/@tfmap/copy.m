@@ -1,5 +1,5 @@
 % COPY makes a (deep) copy of the input tfmap objects.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % DESCRIPTION: COPY makes a deep copy of the input tfmap objects.
 %
@@ -12,25 +12,24 @@
 %
 % This is a transparent function and adds no history.
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function varargout = copy(old, deepcopy)
-  
-  if deepcopy
+
+if deepcopy
     % Loop over input tfmap objects
-    new = tfmap.newarray(size(old));
+    new = createArray(size(old), 'tfmap');
     obj = copy@data3D(new, old, 1);
-    
+
     for kk=1:numel(old)
-      obj(kk).t0      = copy(old(kk).t0, 1);
-      obj(kk).toffset = old(kk).toffset;
-      obj(kk).fs      = old(kk).fs;
-      obj(kk).nsecs   = old(kk).nsecs;
+        obj(kk).t0      = copy(old(kk).t0, 1);
+        obj(kk).toffset = old(kk).toffset;
+        obj(kk).fs      = old(kk).fs;
+        obj(kk).nsecs   = old(kk).nsecs;
     end
-  else
+else
     obj = old;
-  end
-  
-  varargout{1} = obj;
 end
 
+varargout{1} = obj;
+end

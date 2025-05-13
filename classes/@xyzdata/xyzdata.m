@@ -175,7 +175,7 @@ classdef (Hidden = true) xyzdata < data3D
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = xyzdata.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'xyzdata');
     end
     
   end % End static methods

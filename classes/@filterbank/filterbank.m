@@ -261,7 +261,7 @@ classdef filterbank < ltpda_uoh
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = filterbank.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'filterbank');
     end
     
   end

@@ -324,7 +324,7 @@ classdef rational < ltpda_tf
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = rational.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'rational');
     end
     
   end % End static methods

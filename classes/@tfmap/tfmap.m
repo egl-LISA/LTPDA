@@ -182,7 +182,7 @@ classdef (Hidden = true) tfmap < data3D & tsdata
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = tfmap.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'tfmap');
     end
     
   end % End static methods

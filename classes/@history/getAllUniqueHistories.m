@@ -4,7 +4,8 @@ function [collHists, collUUIDs] = getAllUniqueHistories(inHists)
   
 end
 
-function [collHists, collUUIDs] = internal_getAllUniqueHistories(inHists, collUUIDs, collHists)
+function [collHists, collUUIDs] = internal_getAllUniqueHistories(inHists, ...
+    collUUIDs, collHists)
   
   for hh = 1:numel(inHists)
     
@@ -19,7 +20,8 @@ function [collHists, collUUIDs] = internal_getAllUniqueHistories(inHists, collUU
       
       % Collect the histories from the inhists
       if ~isempty(inHist.inhists)
-        [collHists, collUUIDs] = internal_getAllUniqueHistories(inHist.inhists, collUUIDs, collHists);
+        [collHists, collUUIDs] = internal_getAllUniqueHistories(inHist.inhists, ...
+            collUUIDs, collHists);
       end
       
       % Collect the histories from the plistUsed
@@ -30,13 +32,15 @@ function [collHists, collUUIDs] = internal_getAllUniqueHistories(inHists, collUU
         if ~isempty(val)
           
           if isa(val, 'history')
-            [collHists, collUUIDs] = internal_getAllUniqueHistories(val, collUUIDs, collHists);
+            [collHists, collUUIDs] = internal_getAllUniqueHistories(val, ...
+                collUUIDs, collHists);
             
           elseif iscell(val)
             
             idx = cellfun(@(x) isa(x, 'history'), val);
             tmp = [val{idx}];
-            [collHists, collUUIDs] = internal_getAllUniqueHistories(tmp, collUUIDs, collHists);
+            [collHists, collUUIDs] = internal_getAllUniqueHistories(tmp, ...
+                collUUIDs, collHists);
             
           end
         end
@@ -55,7 +59,7 @@ end
 % list is fully compiled.
 function new = copyHistory(old)
   
-  new = history.newarray(size(old));
+  new = createArray(size(old), 'history');
   
   for kk=1:numel(old)
     new(kk).plistUsed    = old(kk).plistUsed;

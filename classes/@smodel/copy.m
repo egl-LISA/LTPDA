@@ -26,7 +26,7 @@ function varargout = copy(varargin)
   
   if deepcopy
     % Loop over input smodel objects
-    new = smodel.newarray(size(old));
+    new = createArray(size(old), 'smodel');
     obj = copy@ltpda_uoh(new, old, 1, addHist);
     
     for kk=1:numel(old)

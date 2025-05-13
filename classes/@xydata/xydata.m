@@ -148,7 +148,7 @@ classdef (Hidden = true) xydata < data2D
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = xydata.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'xydata');
     end
     
   end % End static methods

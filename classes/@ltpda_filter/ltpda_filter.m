@@ -164,7 +164,7 @@ classdef (Hidden = true) ltpda_filter < ltpda_tf
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = ltpda_filter.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'ltpda_filter');
     end
   end
   

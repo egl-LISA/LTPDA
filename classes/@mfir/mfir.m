@@ -385,7 +385,7 @@ classdef mfir < ltpda_filter
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = mfir.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'mfir');
     end
     
   end
@@ -574,4 +574,3 @@ classdef mfir < ltpda_filter
   end
   
 end
-

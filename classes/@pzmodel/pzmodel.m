@@ -422,7 +422,7 @@ classdef pzmodel < ltpda_tf
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = pzmodel.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'pzmodel');
     end
     
   end % End static methods

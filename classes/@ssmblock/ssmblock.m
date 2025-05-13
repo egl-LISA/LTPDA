@@ -547,7 +547,7 @@ classdef (Hidden = true) ssmblock < ltpda_nuo
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = ssmblock.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'ssmblock');
     end
     
   end %% -------- Declaration of Public Static methods --------

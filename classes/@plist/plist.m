@@ -968,7 +968,7 @@ classdef plist < ltpda_uo
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = plist.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'plist');
     end
     
   end

@@ -1,5 +1,5 @@
 % COPY makes a (deep) copy of the input mfir objects.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % DESCRIPTION: COPY makes a deep copy of the input mfir objects.
 %
@@ -11,31 +11,30 @@
 %
 % OUTPUTS:     b - copy of inputs
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function varargout = copy(varargin)
-  
-  old     = varargin{1};
-  addHist = false;
-  if nargin == 1
+
+old     = varargin{1};
+addHist = false;
+if nargin == 1
     deepcopy = true;
     addHist  = true;
-  else
+else
     deepcopy = varargin{2};
-  end
-  
-  if deepcopy
-    % Loop over input mfir objects
-    new = mfir.newarray(size(old));
-    obj = copy@ltpda_filter(new, old, 1, addHist);
-    
-    for kk=1:numel(old)
-      obj(kk).gd = old(kk).gd;
-    end
-  else
-    obj = old;
-  end
-  
-  varargout{1} = obj;
 end
 
+if deepcopy
+    % Loop over input mfir objects
+    new = createArray(size(old), 'mfir');
+    obj = copy@ltpda_filter(new, old, 1, addHist);
+
+    for kk=1:numel(old)
+        obj(kk).gd = old(kk).gd;
+    end
+else
+    obj = old;
+end
+
+varargout{1} = obj;
+end

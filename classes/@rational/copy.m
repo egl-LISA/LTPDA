@@ -1,5 +1,5 @@
 % COPY makes a (deep) copy of the input rational objects.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % DESCRIPTION: COPY makes a deep copy of the input rational objects.
 %
@@ -11,32 +11,32 @@
 %
 % OUTPUTS:     b - copy of inputs
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function varargout = copy(varargin)
-  
-  old     = varargin{1};
-  addHist = false;
-  if nargin == 1
+
+old     = varargin{1};
+addHist = false;
+
+if nargin == 1
     deepcopy = true;
     addHist  = true;
-  else
+else
     deepcopy = varargin{2};
-  end
-  
-  if deepcopy
-    % Loop over input rational objects
-    new = rational.newarray(size(old));
-    obj = copy@ltpda_tf(new, old, 1, addHist);
-    
-    for kk=1:numel(old)
-      obj(kk).num  = old(kk).num;
-      obj(kk).den  = old(kk).den;
-    end
-  else
-    obj = old;
-  end
-  
-  varargout{1} = obj;
 end
 
+if deepcopy
+    % Loop over input rational objects
+    new = createArray(size(old), 'rational');
+    obj = copy@ltpda_tf(new, old, 1, addHist);
+
+    for kk=1:numel(old)
+        obj(kk).num  = old(kk).num;
+        obj(kk).den  = old(kk).den;
+    end
+else
+    obj = old;
+end
+
+varargout{1} = obj;
+end

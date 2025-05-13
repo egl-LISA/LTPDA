@@ -280,7 +280,7 @@ classdef (Hidden = true) pz < ltpda_nuo
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = pz.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'pz');
     end
     
     r = resp_pz_Q_core(f, f0, Q)

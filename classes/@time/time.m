@@ -290,7 +290,7 @@ classdef time < ltpda_nuo
     end
 
     function obj = initObjectWithSize(varargin)
-      obj = time.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'time');
     end
 
     function val = getTimezone()

@@ -16,7 +16,7 @@ function varargout = copy(old, deepcopy)
   
   if deepcopy
     % Loop over input param objects
-    new = param.newarray(size(old));
+    new = createArray(size(old), 'param');
     
     for kk = 1:numel(old)
       if isa(old(kk).val, 'ltpda_obj')

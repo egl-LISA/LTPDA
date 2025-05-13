@@ -85,7 +85,7 @@ classdef pest < ltpda_uoh
     end
     % names
     function set.names(obj, val)
-      if numel(val) == 1 && iscell(val{1})
+      if isscalar(val) && iscell(val{1})
         vals = val{1};
         for kk=1:numel(vals)
           vals{kk} = char(vals{kk});
@@ -112,7 +112,7 @@ classdef pest < ltpda_uoh
     end
     % yunits
     function set.yunits(obj, val)
-      if numel(val) == 1 && iscell(val) && iscell(val{1})
+      if isscalar(val) && iscell(val) && iscell(val{1})
         val = val{1};
       end
       if isempty(val)
@@ -546,7 +546,7 @@ classdef pest < ltpda_uoh
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = pest.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'pest');
     end
     
   end % End static methods

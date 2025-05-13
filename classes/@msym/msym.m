@@ -1,5 +1,5 @@
 % MSYM LTPDA symbolic class class constructor.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % DESCRIPTION: MSYM LTPDA symbolic class class constructor.
 %              This class is used for the expression in a smodel object.
@@ -11,45 +11,46 @@
 %
 % SEE ALSO: smodel
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 classdef (Hidden = true) msym < ltpda_nuo
-  
-  properties
-    s = '';
-  end
-  
-  methods
-    
-    function ms = msym(varargin)
-      
-      if isstruct(varargin{1})
-        ms.s = varargin{1}.s;
-      else
-        if ischar(varargin{1})
-          ms.s = varargin{1};
-        elseif isnumeric(varargin{1})
-          ms.s = mat2str(varargin{1});
-        elseif isa(varargin{1}, 'msym')
-          ms.s = varargin{1}.s;
-        else
-          error('### Unknown class [%s] to convert it to a symbolic class.', class(varargin{1}));
+
+    properties
+        s = '';
+    end
+
+    methods
+
+        function ms = msym(varargin)
+
+            if isstruct(varargin{1})
+                ms.s = varargin{1}.s;
+            else
+                if ischar(varargin{1})
+                    ms.s = varargin{1};
+                elseif isnumeric(varargin{1})
+                    ms.s = mat2str(varargin{1});
+                elseif isa(varargin{1}, 'msym')
+                    ms.s = varargin{1}.s;
+                else
+                    error('### Unknown class [%s] to convert it to a symbolic class.', ...
+                        class(varargin{1}));
+                end
+            end
+
         end
-      end
-      
+
     end
-    
-  end
-  
-  methods (Static = true)
-    function obj = initObjectWithSize(varargin)
-      obj = msym.newarray([varargin{:}]);
+
+    methods (Static = true)
+        function obj = initObjectWithSize(varargin)
+            obj = createArray([varargin{:}], 'msym');
+        end
     end
-  end
-  
-  methods (Static = true, Hidden = true)
-    varargout = loadobj(varargin)
-    varargout = update_struct(varargin);
-  end
-  
+
+    methods (Static = true, Hidden = true)
+        varargout = loadobj(varargin)
+        varargout = update_struct(varargin);
+    end
+
 end

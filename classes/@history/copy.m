@@ -1,5 +1,5 @@
 % COPY makes a (deep) copy of the input history objects.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % DESCRIPTION: COPY makes a deep copy of the input history objects.
 %
@@ -12,27 +12,26 @@
 %
 % This is a transparent function and adds no history.
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function varargout = copy(old, deepcopy)
-  
-  if deepcopy
+
+if deepcopy
     % Loop over input history objects
-    new = history.newarray(size(old));
-    
+    new = createArray(size(old), 'history');
+
     for kk=1:numel(old)
-      new(kk).methodInfo   = old(kk).methodInfo;
-      new(kk).plistUsed    = old(kk).plistUsed;
-      new(kk).methodInvars = old(kk).methodInvars;
-      new(kk).inhists      = old(kk).inhists;
-      new(kk).proctime     = old(kk).proctime;
-      new(kk).UUID         = old(kk).UUID;
-      new(kk).objectClass  = old(kk).objectClass;
+        new(kk).methodInfo   = old(kk).methodInfo;
+        new(kk).plistUsed    = old(kk).plistUsed;
+        new(kk).methodInvars = old(kk).methodInvars;
+        new(kk).inhists      = old(kk).inhists;
+        new(kk).proctime     = old(kk).proctime;
+        new(kk).UUID         = old(kk).UUID;
+        new(kk).objectClass  = old(kk).objectClass;
     end
-  else
+else
     new = old;
-  end
-  
-  varargout{1} = new;
 end
 
+varargout{1} = new;
+end

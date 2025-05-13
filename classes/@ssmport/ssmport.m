@@ -194,7 +194,7 @@ classdef (Hidden = true) ssmport < ltpda_nuo
   methods (Static=true)
     
     function obj = initObjectWithSize(varargin)
-      obj = ssmport.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'ssmport');
     end
     
     function ii = getInfo(varargin)

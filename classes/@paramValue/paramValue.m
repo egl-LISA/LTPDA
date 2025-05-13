@@ -131,7 +131,7 @@ classdef (Sealed = true, Hidden = true) paramValue < ltpda_nuo
               pl_selection = pl.find_core('selection');
               
               % Set the value index to 1 if there is only one option.
-              if isempty(pl_valIndex) && numel(pl_options) == 1
+              if isempty(pl_valIndex) && isscalar(pl_options)
                 pl_valIndex = 1;
               end
               
@@ -166,7 +166,7 @@ classdef (Sealed = true, Hidden = true) paramValue < ltpda_nuo
           obj.valIndex = varargin{1};
           obj.options  = varargin{2};
           
-        case 3;
+        case 3
           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
           %%%%%%%%%%%%%%%%%%%%%%%%%%   three inputs   %%%%%%%%%%%%%%%%%%%%%%%%%
           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -365,7 +365,7 @@ classdef (Sealed = true, Hidden = true) paramValue < ltpda_nuo
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = paramValue.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'paramValue');
     end
     
   end

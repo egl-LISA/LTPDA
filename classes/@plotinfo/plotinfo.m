@@ -427,7 +427,7 @@ classdef plotinfo < ltpda_nuo
     end
     
     function obj = initObjectWithSize(varargin)
-      obj = plotinfo.newarray([varargin{:}]);
+      obj = createArray([varargin{:}], 'plotinfo');
     end
     
   end

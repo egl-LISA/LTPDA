@@ -89,7 +89,7 @@ function mdl = mtimes(varargin)
       end
       
       % init output
-      mdl = smodel.newarray([rw1 cl2]);
+      mdl = createArray([rw1 cl2], 'smodel');
       % init expression strins array
       tmst = cell(rw1,cl2);
       % do raw by colum product

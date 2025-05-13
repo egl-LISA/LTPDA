@@ -24,7 +24,7 @@ function varargout = copy(varargin)
   
   if deepcopy
     % Loop over input plist objects
-    new = plist.newarray(size(old));
+    new = createArray(size(old), 'plist');
     obj = copy@ltpda_uo(new, old, true);
     
     for kk = 1:numel(old)

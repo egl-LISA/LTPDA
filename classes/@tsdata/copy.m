@@ -18,7 +18,7 @@ function varargout = copy(old, deepcopy)
   
   if deepcopy
     % Loop over input tsdata objects
-    new = tsdata.newarray(size(old));
+    new = createArray(size(old), 'tsdata');
     obj = copy@data2D(new, old, 1);
     
     for kk=1:numel(old)
