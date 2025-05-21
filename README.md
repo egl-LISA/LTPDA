@@ -1,5 +1,7 @@
 # LTPDA toolbox
-[Davide Dal Bosco](https://github.com/davidedalbosco)'s version of the [LISA Technology Package Data Analysis](https://www.lisamission.org/ltpda/) (LTPDA for friends) toolbox.
+Fork of the [LISA Technology Package Data Analysis](https://www.lisamission.org/ltpda/) (LTPDA for friends) toolbox compatible with MATLAB releases after R2024b. 
+
+Maintained by [Davide Dal Bosco](https://github.com/davidedalbosco).
 
 ## Changelog
 
