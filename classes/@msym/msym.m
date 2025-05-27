@@ -23,23 +23,26 @@ classdef (Hidden = true) msym < ltpda_nuo
 
         function ms = msym(varargin)
 
-            if isstruct(varargin{1})
-                ms.s = varargin{1}.s;
+            if nargin == 0
+                ms = msym('');
             else
-                if ischar(varargin{1})
-                    ms.s = varargin{1};
-                elseif isnumeric(varargin{1})
-                    ms.s = mat2str(varargin{1});
-                elseif isa(varargin{1}, 'msym')
+                if isstruct(varargin{1})
                     ms.s = varargin{1}.s;
                 else
-                    error('### Unknown class [%s] to convert it to a symbolic class.', ...
-                        class(varargin{1}));
+                    if ischar(varargin{1})
+                        ms.s = varargin{1};
+                    elseif isnumeric(varargin{1})
+                        ms.s = mat2str(varargin{1});
+                    elseif isa(varargin{1}, 'msym')
+                        ms.s = varargin{1}.s;
+                    else
+                        error('### Unknown class [%s] to convert it to a symbolic class.', ...
+                            class(varargin{1}));
+                    end
                 end
+
             end
-
         end
-
     end
 
     methods (Static = true)
