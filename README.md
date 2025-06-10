@@ -12,7 +12,7 @@ foo = className.newarray([sz1, ..., szN])
 ```
 Apparently, in the releases of MATLAb after (and including) R2025b this method has been replaced by the function [`createArray`](https://www.mathworks.com/help/matlab/ref/createarray.html) with the updated syntax
 ```
-foo = createArray( [sz1, ..., szN], 'className')
+foo = createArray([sz1, ..., szN], 'className')
 ```
 
 ### May 2024
